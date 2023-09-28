@@ -6,19 +6,14 @@ const url = "https://dummyjson.com/products"
 
 // nomedafunc(URL, {})
 
-
-// fetch(url, {
-//     method: "get",
-// }).then(result =>
-//     result.json()
-// ).then(data => console.log(data))
-// .catch(err => console.log(err))
-
-// function showInfo(result) {
-//     console.log("Banana")
-//     console.log(result)
-// }
-
 fetch(url, { method: "get" })
 .then(result => result.json())
 .then(dados => console.log(dados))
+
+function showInfo(result) {
+    console.log(result.products)
+    result.products.forEach(element => {
+        console.log(element.description)
+        console.log(element.images[0])
+    })
+}
